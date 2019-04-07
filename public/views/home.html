@@ -1,0 +1,96 @@
+<div ng-include="'templates/loader.html'" ng-if="loaded1==false"></div>
+
+<div class="row" style="margin-top:3%">
+    <div class="col-md-12">
+        <p style="color:red">1.Print the list of highest marks in each subject and name of the student</p>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">s.No</th>
+                <th scope="col">Subject</th>
+                <th scope="col">Student</th>
+                <th scope="col">marks</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>{{des_math[0].subject}}</td>
+                <td>{{des_math[0].name}}</td>
+                <td>{{des_math[0].marks}}</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>{{des_phy[0].subject}}</td>
+                <td>{{des_phy[0].name}}</td>
+                <td>{{des_phy[0].marks}}</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>{{des_chem[0].subject}}</td>
+                <td>{{des_chem[0].name}}</td>
+                <td>{{des_chem[0].marks}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+
+    <div class="col-md-12">
+        <p style="color:red">2.What is avarage mark scored by the class across all subjects.</p>
+        <p style="color:blue">ans:- {{avg}}</p>
+    </div>
+
+    <div class="col-md-12">
+        <p style="color:red">3. Print total no  of students getting >60 marks across all subjects.</p>
+        <p style="color:blue">Ans: {{greater_than_60.length}}</p>
+        <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">s.No</th>
+                    <th scope="col">Subject</th>
+                    <th scope="col">Student</th>
+                    <th scope="col">marks</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="data in greater_than_60 track by $index">
+                    <th scope="row">{{$index+1}}</th>
+                    <td>{{data.subject}}</td>
+                    <td>{{data.name}}</td>
+                    <td>{{data.marks}}</td>
+                  </tr>
+                </tbody>
+        </table>
+
+    </div>
+
+    <div class="col-md-12">
+        <p style="color:red">4.What is the sum of total marks scored by the topper in the class? Print with name and sum of marks in all subjects.</p>
+        <p style="color:blue">ans:- Name-{{topper}} , marks-{{highest_marks}}</p>
+    </div>
+
+    <div class="col-md-12">
+            <p style="color:red">5. Print total data</p>
+            <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">s.No</th>
+                        <th scope="col">Subject</th>
+                        <th scope="col">Student</th>
+                        <th scope="col">marks</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="data in total track by $index">
+                        <th scope="row">{{$index+1}}</th>
+                        <td>{{data.subject}}</td>
+                        <td>{{data.name}}</td>
+                        <td>{{data.marks}}</td>
+                      </tr>
+                    </tbody>
+            </table>
+    
+        </div>
+
+
+</div>
